@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRE Quant Diagnostic</title>
+  <meta name="description" content="A timed GRE Quantitative Reasoning diagnostic that estimates your current level and how long you need to prepare.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- Intro -->
+    <section id="intro">
+      <p class="eyebrow">GRE General Test · Quantitative Reasoning</p>
+      <h1>GRE Quant Diagnostic</h1>
+      <p class="lead">Find out roughly where you stand on GRE Quant today, and about how many hours of prep it will take to reach your target score.</p>
+
+      <div class="card">
+        <h2>What to expect</h2>
+        <ul>
+          <li><strong>24 questions</strong> covering the four GRE Quant content areas: Arithmetic, Algebra, Geometry, and Data Analysis.</li>
+          <li>All four GRE question formats: Quantitative Comparison, single-answer multiple choice, select-all-that-apply, and numeric entry.</li>
+          <li><strong>42 minutes</strong>, the same pace as the real test (about 1 min 45 s per question).</li>
+          <li>You can skip questions, flag them, and come back to them before you submit, just like on the real test.</li>
+          <li>Keep scratch paper and a basic calculator handy. The real GRE gives you an on-screen calculator.</li>
+        </ul>
+        <label class="check"><input type="checkbox" id="timed-toggle" checked> Timed mode (recommended for an accurate estimate)</label>
+        <button id="start-btn" class="primary">Start diagnostic</button>
+      </div>
+
+      <div id="history" class="card" hidden>
+        <h2>Previous attempts on this device</h2>
+        <table class="grid-table" id="history-table"></table>
+      </div>
+
+      <p class="fine">This is a self-check, not an official ETS score. The real GRE is section-adaptive and scored by ETS. Treat the estimate here as a range, and confirm it with an official POWERPREP practice test.</p>
+    </section>
+
+    <!-- Test -->
+    <section id="test" hidden>
+      <div class="bar">
+        <span id="q-counter"></span>
+        <span id="timer" class="timer" aria-live="off"></span>
+        <button id="flag-btn" class="ghost" aria-pressed="false">Flag</button>
+      </div>
+
+      <div class="card question">
+        <div id="q-body"></div>
+      </div>
+
+      <div class="nav">
+        <button id="prev-btn">Back</button>
+        <button id="next-btn" class="primary">Next</button>
+      </div>
+
+      <div class="card">
+        <div class="grid-head">
+          <h2>Review</h2>
+          <span class="legend"><i class="dot answered"></i>answered <i class="dot flagged"></i>flagged</span>
+        </div>
+        <div id="q-grid" class="q-grid"></div>
+        <button id="submit-btn" class="danger">Submit test</button>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" hidden>
+      <p class="eyebrow">Your results</p>
+      <h1>Estimated GRE Quant: <span id="r-score"></span></h1>
+      <p class="lead" id="r-band"></p>
+
+      <div class="stats">
+        <div class="stat"><span class="stat-label">Correct</span><span class="stat-value" id="r-correct"></span></div>
+        <div class="stat"><span class="stat-label">Weighted accuracy</span><span class="stat-value" id="r-weighted"></span></div>
+        <div class="stat"><span class="stat-label">Time used</span><span class="stat-value" id="r-time"></span></div>
+        <div class="stat"><span class="stat-label">Avg per question</span><span class="stat-value" id="r-avg"></span></div>
+      </div>
+      <p id="r-pacing" class="note"></p>
+
+      <div class="card">
+        <h2>Prep time planner</h2>
+        <div class="planner-inputs">
+          <label>Target Quant score
+            <input type="number" id="target" min="130" max="170" step="1">
+          </label>
+          <label>Study hours per week
+            <input type="number" id="hpw" min="1" max="60" step="1" value="10">
+          </label>
+        </div>
+        <div id="plan-out" class="plan-out"></div>
+      </div>
+
+      <div class="card">
+        <h2>By content area</h2>
+        <div id="r-topics"></div>
+      </div>
+
+      <div class="card">
+        <h2>By difficulty</h2>
+        <div id="r-diff"></div>
+      </div>
+
+      <div class="card">
+        <h2>Question review</h2>
+        <div id="r-review"></div>
+      </div>
+
+      <div class="nav">
+        <button id="copy-btn">Copy summary</button>
+        <button id="retake-btn" class="primary">Retake</button>
+      </div>
+      <p class="fine">The score estimate weights hard questions more heavily than easy ones and maps the result onto the 130–170 scale. The prep hours come from a rule of thumb: each point costs more as you get closer to 170. Both are approximate. Retake after a few weeks of study, and take official POWERPREP tests to check your progress.</p>
+    </section>
+
+  </main>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

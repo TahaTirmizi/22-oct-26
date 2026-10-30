@@ -23,6 +23,7 @@ Total is about 1 hour 58 minutes. Check [ets.org/gre](https://www.ets.org/gre) f
 
 ## Deliverables
 
+- [ ] Take the [GRE Quant Diagnostic](https://tahatirmizi.github.io/22-oct-26/) in timed mode, then paste the "Copy summary" output into the progress log. Retake it every 2–3 weeks.
 - [ ] Take a diagnostic test (free official POWERPREP test #1) and record the scores below
 - [ ] Fill in target score and test date at the top of this file
 - [ ] Book the test on ets.org

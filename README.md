@@ -18,9 +18,14 @@ This repo is where tasks get assigned to Taha and where he does the work and rep
 
 Status values: `Not started` · `In progress` · `Blocked` · `In review` · `Done`
 
+## Tools
+
+- **[GRE Quant Diagnostic](https://tahatirmizi.github.io/22-oct-26/)**: a timed 24-question test that estimates your GRE Quant score range and how many weeks of prep you need to reach a target. The source is in [docs/](docs/). To enable it, go to Settings → Pages, choose **Deploy from a branch**, and pick branch `main`, folder `/docs`.
+
 ## Folder layout
 
 ```
+docs/                    GRE Quant Diagnostic web app (served by GitHub Pages)
 tasks/
   001-gre-prep/          GRE study plan, practice-test scores, error log
   002-research-paper/    paper shortlist, chosen paper, summary
